@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="博予的博客">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Terminal高效办公 - Ltx的博客 | Ltx&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> sometimes code </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>博予</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Homebrew"><span class="toc-text">安装Homebrew</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-iTerm2"><span class="toc-text">安装 iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85zsh"><span class="toc-text">安装zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Oh-My-Zsh"><span class="toc-text">安装 Oh-My-Zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Powerline-fonts"><span class="toc-text">安装 Powerline fonts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-agnoster-%E4%B8%BB%E9%A2%98"><span class="toc-text">安装 agnoster 主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-zsh-syntax-highlighting-%E5%91%BD%E4%BB%A4%E9%AB%98%E4%BA%AE%E6%8F%92%E4%BB%B6"><span class="toc-text">安装 zsh-syntax-highlighting 命令高亮插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> sometimes code </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Terminal高效办公
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-07-03 15:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Terminal" title="Terminal">Terminal</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#Tool" title="Tool">Tool</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>作为一位程序员，每天上班就是写BUG -&gt; 写BUG -&gt; 写BUG，下班，oh no~~~BUG还没写完还有脸下班，加班到写不动了再下班。</p>
+<p>作为Java程序员虽说很多集成工具已经做的很完善了很多东西都可以通过非常好的集成开发环境来搞定(开发、版本管理等)，ok，其实集成开发环境也不是能完全搞定所有的事情，本地运行日志的Grep等就需要借助终端搞笑完成。还有远程服务出现问题需要登录到远程机器上去看服务的运行状态等。</p>
+<p>所以程序员日常接触到终端的机会非常非常的多，那你用的是什么样的终端环境呢？</p>
+<p>我一般很懒下个iterm2调调字体背景窗体就用起来了，在团队中还能看到直接用Mac自带的Terminal，当然都能很好的完成日常工作，这里就借助zsh来一步步搭建一个不太华丽的Terminal吧。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li>iTerm2</li>
+<li>Oh-My-Zsh(用来管理zsh的配置有很多主题以及丰富的插件可供使用；zsh是shell外壳，强大的虚拟终端)</li>
+<li>agnoster 主题</li>
+<li>zsh 命令语法高亮</li>
+</ul>
+<h3 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h3><p>拿到一台几乎全新的电脑，brew都没有，所以先通过以下命令安装个<a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>bin<span class="regexp">/ruby -e &quot;$(curl -fsSL https:/</span><span class="regexp">/raw.githubusercontent.com/</span>Homebrew<span class="regexp">/install/m</span>aster/install)<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+<p>安装Homebrew的过程中也会安装Xcode Command Line Tools(Git等工具)</p>
+<h3 id="安装-iTerm2"><a href="#安装-iTerm2" class="headerlink" title="安装 iTerm2"></a>安装 iTerm2</h3><p>安装iTerm2可以从<a target="_blank" rel="noopener" href="https://www.iterm2.com/">官方下载</a>后直接安装</p>
+<p>可以说下载了iTerm2就已经比用Mac自带的Terminal迈出了很大一步吗，嘻嘻~~~</p>
+<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><p>一般情况下zsh都是OS X自带安装好的，不需要额外安装</p>
+<p>可以通过如下命令来查看zsh是否安装好<br><code>zsh --version</code></p>
+<p>如果没有安装好可以通过命令<code>brew install zsh zsh-completions</code>进行安装</p>
+<h3 id="安装-Oh-My-Zsh"><a href="#安装-Oh-My-Zsh" class="headerlink" title="安装 Oh-My-Zsh"></a>安装 Oh-My-Zsh</h3><p>通过以下命令安装Oh-My-Zsh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-Powerline-fonts"><a href="#安装-Powerline-fonts" class="headerlink" title="安装 Powerline fonts"></a>安装 Powerline fonts</h3><p>通过git拉代码下来后进行安装Powerline字体</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="string">//github.com/powerline/fonts.git</span> <span class="params">--depth=1</span>; <span class="keyword">cd</span> fonts; <span class="string">./install.sh</span>; <span class="keyword">cd</span> <span class="string">..</span>; rm -rf fonts</span><br></pre></td></tr></table></figure>
+<p>下载好字体后按如下步骤应用到iterm2中</p>
+<p>Preferences -&gt; Profiles -&gt; Text -&gt; Change Font具体配置参考如下图</p>
+<h3 id="安装-agnoster-主题"><a href="#安装-agnoster-主题" class="headerlink" title="安装 agnoster 主题"></a>安装 agnoster 主题</h3><p>一般情况下Oh-My-Zsh安装的时候默认安装了这个主题 可以通过<code>ls ~/.oh-my-zsh/themes</code>查看所有的默认主题。</p>
+<p>按照如下步骤切换主题</p>
+<p><code>vim ~/.zshrc</code>打开配置文件，修改里面 ZSH_THEME 的值为 ZSH_THEME=”agnoster”</p>
+<p>还有各种主题<a target="_blank" rel="noopener" href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes#agnoster">点这里</a></p>
+<p>修改命令提示符</p>
+<p>应用主题后命令提示符会变得很长 <code>zhouzhou@zhouzhoudeMacBook</code> 这样导致显示太过冗长了，因此可以在<code>vim ~/.zshrc</code>中追加</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：DEFAULT_USER 的值必须要是系统用户名才能生效</span></span><br><span class="line"><span class="attr">DEFAULT_USER</span>=<span class="string">&quot;user&quot;</span></span><br></pre></td></tr></table></figure>
+<p>来去掉冗长的显示</p>
+<h3 id="安装-zsh-syntax-highlighting-命令高亮插件"><a href="#安装-zsh-syntax-highlighting-命令高亮插件" class="headerlink" title="安装 zsh-syntax-highlighting 命令高亮插件"></a>安装 zsh-syntax-highlighting 命令高亮插件</h3><p>通过如下命令安装自定义的高亮插件</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/zsh-users/</span>zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span><span class="regexp">/plugins/</span>zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+<p>安装完成后通过修改<code>vim ~/.zshrc</code>中的如下部分，通过执行<code>source ~/.zshrc</code>应用高亮插件</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">plugins</span>=(</span><br><span class="line">  git</span><br><span class="line">  zsh-syntax-highlighting</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41745503">Mac OS X 下优化 Terminal，一篇就够了！</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37195261">iTerm2 + Oh My Zsh 打造舒适终端体验</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/xin-gu-shi-61">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/xing-boyu">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/谭兴-刘-4996b3b9">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://xing-boyu.github.io/">Ltx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>
