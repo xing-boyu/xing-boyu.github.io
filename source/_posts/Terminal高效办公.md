@@ -2,7 +2,6 @@
 title: Terminal高效办公
 date: 2021-07-03 15:00:00
 tags:
-    - Terminal
     - Tool
 ---
 作为一位程序员，每天上班就是写BUG -> 写BUG -> 写BUG，下班，oh no~~~BUG还没写完还有脸下班，加班到写不动了再下班。
