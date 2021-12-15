@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="博予的博客">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        面向对象设计原则-S.O.L.I.D - Ltx的博客 | Ltx&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> sometimes code </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>博予</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%B8%80%E8%B4%A3%E4%BB%BB%E5%8E%9F%E5%88%99%EF%BC%88SRP%EF%BC%89"><span class="toc-text">单一责任原则（SRP）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9D%E8%83%8C%E5%8D%95%E4%B8%80%E8%B4%A3%E4%BB%BB%E5%8E%9F%E5%88%99"><span class="toc-text">违背单一责任原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%80%E8%B4%A3%E4%BB%BB%E5%8E%9F%E5%88%99%E5%BA%94%E7%94%A8"><span class="toc-text">单一责任原则应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99%E5%8E%9F%E5%88%99%EF%BC%88OCP%EF%BC%89"><span class="toc-text">开闭原则原则（OCP）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9D%E8%83%8C%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99"><span class="toc-text">违背开闭原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99%E5%BA%94%E7%94%A8"><span class="toc-text">开闭原则应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99%EF%BC%88LSP%EF%BC%89"><span class="toc-text">里氏替换原则（LSP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99%EF%BC%88ISP%EF%BC%89"><span class="toc-text">接口隔离原则（ISP）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9D%E5%8F%8D%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99"><span class="toc-text">违反接口隔离原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99%E5%BA%94%E7%94%A8"><span class="toc-text">接口隔离原则应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99%EF%BC%88DIP%EF%BC%89"><span class="toc-text">依赖倒置原则（DIP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> sometimes code </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        面向对象设计原则-S.O.L.I.D
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-12-14 20:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Design" title="Design">Design</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>面向对象的五大设计原则S.O.L.I.D，应用这些原则可以引导创建出一个更容易维护和扩展性的软件系统。</p>
+<p>SOLID释义:</p>
+<ul>
+<li>S - Single-responsiblity Principle（单一责任原则）</li>
+<li>O - Open-closed Principle（开闭原则）</li>
+<li>L - Liskov Substitution Principle（里氏替换原则）</li>
+<li>I - Interface Segregation Principle（接口隔离原则）</li>
+<li>D - Dependency Inversion Principle（依赖倒置原则）</li>
+</ul>
+<h2 id="单一责任原则（SRP）"><a href="#单一责任原则（SRP）" class="headerlink" title="单一责任原则（SRP）"></a>单一责任原则（SRP）</h2><p>单一责任原则：类仅具有单一的功能</p>
+<blockquote>
+<p>A class should have one, and only one, reason to change.</p>
+</blockquote>
+<h3 id="违背单一责任原则"><a href="#违背单一责任原则" class="headerlink" title="违背单一责任原则"></a>违背单一责任原则</h3><p><img src="/solid/img/solid1.png" alt="solid1"><br>如上是个JDK中Date的类定义，其中定义了Date format的两个方法，假设在这个基础上需要再增加另一种format方法，则需要修改类的定义类似再增加一个方法如下。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">String</span> <span class="function"><span class="title">toCustomString</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    DateFormat formatter = CustomDateFormat.getDateTimeInstance();</span><br><span class="line">    <span class="keyword">return</span> formatter.format(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="单一责任原则应用"><a href="#单一责任原则应用" class="headerlink" title="单一责任原则应用"></a>单一责任原则应用</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@deprecated <span class="keyword">As</span> <span class="keyword">of</span> JDK <span class="keyword">version</span> <span class="number">1.1</span></span><br><span class="line">replaced <span class="keyword">by</span> DateFormat.format(<span class="type">Date</span> <span class="type">date</span>)</span><br></pre></td></tr></table></figure>
+<p>上面是方法定义上的注释已经废弃了，通过DateFormat.format(Date date)来替代format的功能。后面想扩展任何其他format格式，不用动Date本身的定义，只需要实现DateFormat接口即可以达到功能扩展。</p>
+<p>下图是jdk中类似的思想实现，ObjectInputStream在readObjec时需要针对对象进行数据校验，校验通过定义接口ObjectInputValidation供调用方进行扩展出自定义的Validation。<br><img src="/solid/img/solid2.png" alt="solid2"></p>
+<h2 id="开闭原则原则（OCP）"><a href="#开闭原则原则（OCP）" class="headerlink" title="开闭原则原则（OCP）"></a>开闭原则原则（OCP）</h2><p>开闭原则：软件实体应该对扩展开放对修改关闭。</p>
+<blockquote>
+<p>Objects or entities should be open for extension but closed for modification.</p>
+</blockquote>
+<h3 id="违背开闭原则"><a href="#违背开闭原则" class="headerlink" title="违背开闭原则"></a>违背开闭原则</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;User&gt; sort(List&lt;User&gt; users, Enum <span class="keyword">type</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">type</span><span class="operator"> == </span>AGE)&#123;</span><br><span class="line">        <span class="comment">// 按年龄排序</span></span><br><span class="line">        users = resort<span class="constructor">ListByAge(<span class="params">users</span>)</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">type</span><span class="operator"> == </span>NAME)&#123;</span><br><span class="line">        <span class="comment">// 按名称首字母排序</span></span><br><span class="line">        users = resort<span class="constructor">ListByName(<span class="params">users</span>)</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">type</span><span class="operator"> == </span>HEALTH)&#123;</span><br><span class="line">        <span class="comment">// 按客户健康分排序</span></span><br><span class="line">        users = resort<span class="constructor">ListByHealth(<span class="params">users</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    return users;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>sort方法根据不同的type进行排序，随着业务发展需要增加一个用户按照体重排序，只能按照如下方式进行修改代码</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;User&gt; sort(List&lt;User&gt; users, Enum <span class="keyword">type</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">type</span><span class="operator"> == </span>AGE)&#123;</span><br><span class="line">        <span class="comment">// 按年龄排序</span></span><br><span class="line">        users = resort<span class="constructor">ListByAge(<span class="params">users</span>)</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">type</span><span class="operator"> == </span>NAME)&#123;</span><br><span class="line">        <span class="comment">// 按名称首字母排序</span></span><br><span class="line">        users = resort<span class="constructor">ListByName(<span class="params">users</span>)</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">type</span><span class="operator"> == </span>HEALTH)&#123;</span><br><span class="line">        <span class="comment">// 按客户健康分排序</span></span><br><span class="line">        users = resort<span class="constructor">ListByHealth(<span class="params">users</span>)</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">type</span><span class="operator"> == </span>WEIGHT) &#123;</span><br><span class="line">        <span class="comment">// 按客户体重排序</span></span><br><span class="line">        users = resort<span class="constructor">ListByWeight(<span class="params">users</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    return users;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码就是一个明显违背开闭原则的例子，当我们需要新增一种类型时，需要修改主流程。</p>
+<h3 id="开闭原则应用"><a href="#开闭原则应用" class="headerlink" title="开闭原则应用"></a>开闭原则应用</h3><p>按照开闭原则对上述代码进行重构，在增加新类型时不需要修改主流程，将需要修改的地方开放给到调用方。<br><img src="/solid/img/solid3" alt="solid3"><br>增加体重排序逻辑只需要定义WeightComparator实现Comparator。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">List</span>&lt;<span class="type">User</span>&gt; sort(<span class="type">List</span>&lt;<span class="type">User</span>&gt; users, <span class="type">Comparator</span>&lt;? <span class="keyword">super</span> <span class="type">User</span>&gt; c) &#123;</span><br><span class="line">	<span class="comment">//根据比较符c对users进行排序</span></span><br><span class="line">    <span class="keyword">return</span> users;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按照体重排序的调用：sort(users, WeightComparator);</p>
+<p>下图是JDK中类似的排序实现Arrays.sort。<br><img src="/solid/img/solid4.png" alt="solid4"></p>
+<h2 id="里氏替换原则（LSP）"><a href="#里氏替换原则（LSP）" class="headerlink" title="里氏替换原则（LSP）"></a>里氏替换原则（LSP）</h2><p>里氏替换原则：程序中的对象应该是可以在不改变程序正确性的前提下被他的子类所替换。</p>
+<blockquote>
+<p>Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; arrays = new ArrayList&lt;&gt;();</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;C&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>上面是一段简单的代码，按照里氏替换原则可以被替换为如下代码。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; arrays = new LinkedList&lt;&gt;();</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;C&quot;</span>);</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; arrays = Arrays.asList(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;C&quot;</span>);</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; arrays = ImmutableList.copyOf(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">arrays.<span class="builtin-name">add</span>(<span class="string">&quot;C&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>第一个替换是符合里氏替换原则没有问题，但是后两个替换不符合预期，替换后编译没有问题，但是在执行时出现运行时异常如下。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java<span class="selector-class">.lang</span><span class="selector-class">.UnsupportedOperationException</span></span><br><span class="line">	at java<span class="selector-class">.util</span><span class="selector-class">.AbstractList</span><span class="selector-class">.add</span>(AbstractList<span class="selector-class">.java</span>:<span class="number">148</span>)</span><br><span class="line">	at java<span class="selector-class">.util</span><span class="selector-class">.AbstractList</span><span class="selector-class">.add</span>(AbstractList<span class="selector-class">.java</span>:<span class="number">108</span>)</span><br></pre></td></tr></table></figure>
+<p>往往第一次在开发过程中遇到这个错误会很诧异，为什么会抛出来异常信息，他不是一个List吗？是不是jdk中的包也有不符合里氏替换原则的，严格意义上来说是的。但是我们去看一下List<T>.add接口的定义</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * Appends <span class="keyword">the</span> specified element <span class="keyword">to</span> <span class="keyword">the</span> <span class="keyword">end</span> <span class="keyword">of</span> this <span class="built_in">list</span> (optional</span><br><span class="line">     * operation).</span><br><span class="line">     *</span><br><span class="line">     * &lt;p&gt;Lists <span class="keyword">that</span> support this operation may place limitations <span class="keyword">on</span> what</span><br><span class="line">     * elements may be added <span class="keyword">to</span> this <span class="built_in">list</span>.  In particular, <span class="keyword">some</span></span><br><span class="line">     * lists will refuse <span class="keyword">to</span> add null elements, <span class="keyword">and</span> others will impose</span><br><span class="line">     * restrictions <span class="keyword">on</span> <span class="keyword">the</span> type <span class="keyword">of</span> elements <span class="keyword">that</span> may be added.  List</span><br><span class="line">     * classes should clearly specify <span class="keyword">in</span> their documentation any restrictions</span><br><span class="line">     * <span class="keyword">on</span> what elements may be added.</span><br><span class="line">     *</span><br><span class="line">     * @param e element <span class="keyword">to</span> be appended <span class="keyword">to</span> this <span class="built_in">list</span></span><br><span class="line">     * @<span class="literal">return</span> &lt;tt&gt;<span class="literal">true</span>&lt;/tt&gt; (<span class="keyword">as</span> specified <span class="keyword">by</span> &#123;@link Collection<span class="comment">#add&#125;)</span></span><br><span class="line">     * @throws UnsupportedOperationException <span class="keyword">if</span> <span class="keyword">the</span> &lt;tt&gt;add&lt;/tt&gt; operation</span><br><span class="line">     *         <span class="keyword">is</span> <span class="keyword">not</span> supported <span class="keyword">by</span> this <span class="built_in">list</span></span><br><span class="line">     * @throws ClassCastException <span class="keyword">if</span> <span class="keyword">the</span> <span class="built_in">class</span> <span class="keyword">of</span> <span class="keyword">the</span> specified element</span><br><span class="line">     *         prevents <span class="keyword">it</span> <span class="keyword">from</span> being added <span class="keyword">to</span> this <span class="built_in">list</span></span><br><span class="line">     * @throws NullPointerException <span class="keyword">if</span> <span class="keyword">the</span> specified element <span class="keyword">is</span> null <span class="keyword">and</span> this</span><br><span class="line">     *         <span class="built_in">list</span> <span class="keyword">does</span> <span class="keyword">not</span> permit null elements</span><br><span class="line">     * @throws IllegalArgumentException <span class="keyword">if</span> <span class="keyword">some</span> <span class="keyword">property</span> <span class="keyword">of</span> this element</span><br><span class="line">     *         prevents <span class="keyword">it</span> <span class="keyword">from</span> being added <span class="keyword">to</span> this <span class="built_in">list</span></span><br><span class="line">     */</span><br><span class="line">    <span class="built_in">boolean</span> add(E e);</span><br></pre></td></tr></table></figure>
+<p>他在方法注释上声明了，如果List不支持add操作会抛出UnsupportedOperationException。虽然List<T>.add方法注释上声明了存在List不支持add方法，但是我个人建议编程过程中还是尽量避免这样的方式，会给调用方增加使用成本，得清楚具体的实现类是否有可选方法的实现。</p>
+<h2 id="接口隔离原则（ISP）"><a href="#接口隔离原则（ISP）" class="headerlink" title="接口隔离原则（ISP）"></a>接口隔离原则（ISP）</h2><p>接口隔离原则：子类中不应该被迫依赖于他们不使用的方法</p>
+<blockquote>
+<p>clients should not be forced to implement the unwanted methods of an interface</p>
+</blockquote>
+<h3 id="违反接口隔离原则"><a href="#违反接口隔离原则" class="headerlink" title="违反接口隔离原则"></a>违反接口隔离原则</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MediaPlayer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playAudio</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playVideo</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VlcMediaPlayer</span> <span class="keyword">implements</span> <span class="title">MediaPlayer</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playAudio</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot; Playing audio ..........&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playVideo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot; Playing video ..........&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WinampMediaPlayer</span> <span class="keyword">implements</span> <span class="title">MediaPlayer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Play video is not supported in Winamp player</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playVideo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> VideoUnsupportedException();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playAudio</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Playing audio ..............&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>WinampMediaPlayer不支持playVideo方法，但是其实现了MediaPlayer所以也被迫实现了playVideo方法。</p>
+<h3 id="接口隔离原则应用"><a href="#接口隔离原则应用" class="headerlink" title="接口隔离原则应用"></a>接口隔离原则应用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AudioMediaPlayer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playAudio</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">VideoMediaPlayer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playVideo</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将MediaPlayer接口中的方法按照功能拆分出AudioMediaPlayer、VideoMediaPlayer，只有音频播放能力的播放器只需要实现AudioMediaPlayer。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VlcMediaPlayer</span> <span class="keyword">implements</span> <span class="title">VideoMediaPlayer</span>, <span class="title">AudioMediaPlayer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playVideo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot; Playing video ..........&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playAudio</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot; Playing audio ..........&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WinampMediaPlayer</span> <span class="keyword">implements</span> <span class="title">AudioMediaPlayer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">playAudio</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot; Playing audio........&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>WinampMediaPlayer实现接口AudioMediaPlayer，避免被迫实现playVideo方法。</p>
+<p>下图JDK中的双向链表，实现List、Deque两个接口。<br><img src="/solid/img/solid5.png" alt="solid5"></p>
+<h2 id="依赖倒置原则（DIP）"><a href="#依赖倒置原则（DIP）" class="headerlink" title="依赖倒置原则（DIP）"></a>依赖倒置原则（DIP）</h2><p>依赖倒置原则：高层模块不应该依赖低层模块，两者都应该依赖抽象；抽象不应该依赖细节，细节应该依赖抽象。</p>
+<blockquote>
+<p>High level modules shouldnot depend upon low level modules.Both should depend upon abstractions. Abstractions should not depend upon details. Details should depend upon abstractions</p>
+</blockquote>
+<p><img src="/solid/img/solid6.png" alt="solid6"><br>图中是人去拿起水杯喝水，逻辑上是人依赖于水杯的实现，但是再思考一下，人的手型是确定的，其实是我们在生产水杯的时候适配人的手型去生产的。<br><img src="/solid/img/solid7.png" alt="solid7"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>S.O.L.I.D面向对象的设计，能够指导我们去更好的构建容易维护、扩展性搞的系统，几种原则需要反复结合日常开发过程中的一些思考不断强化，逐步理解到运用。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">SOLID: The First 5 Principles of Object Oriented Design</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIzOTU0NTQ0MA==&mid=2247506304&idx=1&sn=f7dd3f19a7d38489e08dccab70d530d3&chksm=e92ae48fde5d6d99745e659005bb3db5220421180fa993fd961e0d8042af51c4d707dcbb555b#rd">重拾面向对象软件设计​</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/xin-gu-shi-61">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/xing-boyu">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/谭兴-刘-4996b3b9">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://xing-boyu.github.io/">Ltx&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
