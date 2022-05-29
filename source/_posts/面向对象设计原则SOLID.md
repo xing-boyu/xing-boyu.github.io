@@ -18,7 +18,7 @@ SOLID释义:
 > A class should have one, and only one, reason to change.
 
 ### 违背单一责任原则
-![solid1](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid1.png)
+![solid1](https://github.com/xing-boyu/xing-boyu.github.io/raw/master/source/img/solid/solid1.png)
 如上是个JDK中Date的类定义，其中定义了Date format的两个方法，假设在这个基础上需要再增加另一种format方法，则需要修改类的定义类似再增加一个方法如下。
 ```
 public String toCustomString() {
