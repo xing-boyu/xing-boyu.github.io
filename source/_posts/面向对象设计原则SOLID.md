@@ -18,7 +18,7 @@ SOLID释义:
 > A class should have one, and only one, reason to change.
 
 ### 违背单一责任原则
-![solid1](/img/solid/solid1.png)
+![solid1](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid1.png)
 如上是个JDK中Date的类定义，其中定义了Date format的两个方法，假设在这个基础上需要再增加另一种format方法，则需要修改类的定义类似再增加一个方法如下。
 ```
 public String toCustomString() {
@@ -34,7 +34,7 @@ replaced by DateFormat.format(Date date)
 上面是方法定义上的注释已经废弃了，通过DateFormat.format(Date date)来替代format的功能。后面想扩展任何其他format格式，不用动Date本身的定义，只需要实现DateFormat接口即可以达到功能扩展。
 
 下图是jdk中类似的思想实现，ObjectInputStream在readObjec时需要针对对象进行数据校验，校验通过定义接口ObjectInputValidation供调用方进行扩展出自定义的Validation。
-![solid2](/img/solid/solid2.png)
+![solid2]([/img/solid/solid2.png](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid2.png))
 
 ## 开闭原则原则（OCP）
 开闭原则：软件实体应该对扩展开放对修改关闭。
@@ -79,7 +79,7 @@ public List<User> sort(List<User> users, Enum type){
 
 ### 开闭原则应用
 按照开闭原则对上述代码进行重构，在增加新类型时不需要修改主流程，将需要修改的地方开放给到调用方。
-![solid3](/img/solid/solid3.png)
+![solid3]([/img/solid/solid3.png](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid3.png))
 增加体重排序逻辑只需要定义WeightComparator实现Comparator。
 ```
 public List<User> sort(List<User> users, Comparator<? super User> c) {
@@ -90,7 +90,7 @@ public List<User> sort(List<User> users, Comparator<? super User> c) {
 按照体重排序的调用：sort(users, WeightComparator);
 
 下图是JDK中类似的排序实现Arrays.sort。
-![solid4](/img/solid/solid4.png)
+![solid4]([/img/solid/solid4.png](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid4.png))
 
 ## 里氏替换原则（LSP）
 里氏替换原则：程序中的对象应该是可以在不改变程序正确性的前提下被他的子类所替换。
@@ -241,15 +241,15 @@ public class WinampMediaPlayer implements AudioMediaPlayer {
 WinampMediaPlayer实现接口AudioMediaPlayer，避免被迫实现playVideo方法。
 
 下图JDK中的双向链表，实现List、Deque两个接口。
-![solid5](/img/solid/solid5.png)
+![solid5]([/img/solid/solid5.png](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid5.png))
 
 ## 依赖倒置原则（DIP）
 依赖倒置原则：高层模块不应该依赖低层模块，两者都应该依赖抽象；抽象不应该依赖细节，细节应该依赖抽象。
 >High level modules shouldnot depend upon low level modules.Both should depend upon abstractions. Abstractions should not depend upon details. Details should depend upon abstractions
 
-![solid6](/img/solid/solid6.png)
+![solid6]([/img/solid/solid6.png](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid6.png))
 图中是人去拿起水杯喝水，逻辑上是人依赖于水杯的实现，但是再思考一下，人的手型是确定的，其实是我们在生产水杯的时候适配人的手型去生产的。
-![solid7](/img/solid/solid7.png)
+![solid7]([/img/solid/solid7.png](https://github.com/xing-boyu/xing-boyu.github.io/blob/master/source/img/solid/solid7.png))
 
 ## 总结
 S.O.L.I.D面向对象的设计，能够指导我们去更好的构建容易维护、扩展性搞的系统，几种原则需要反复结合日常开发过程中的一些思考不断强化，逐步理解到运用。
